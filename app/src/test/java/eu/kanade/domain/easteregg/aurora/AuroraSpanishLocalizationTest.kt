@@ -74,4 +74,45 @@ class AuroraSpanishLocalizationTest {
         AuroraLocalization.translate(englishFallback, "es") shouldBe "Corazón de Aurora"
         AuroraLocalization.translate(russianFallback, "es") shouldBe "Corazón de Aurora"
     }
+
+    @Test
+    fun additionalAuroraUiTextsTranslateToSpanish() {
+        val expected = mapOf(
+            "Aurora Keeper" to "Guardián de Aurora",
+            "Хранитель Авроры" to "Guardián de Aurora",
+            "CONSTELLATION" to "CONSTELACIÓN",
+            "the thread is thin — slower" to "el hilo es frágil: más despacio",
+            "touch the stars, one by one" to "toca las estrellas, una por una",
+            "join the stars with one thread" to "une las estrellas con un solo hilo",
+            "Anew" to "Empezar de nuevo",
+            "Seal" to "Sellar",
+            "weave with a thread" to "tejer con un hilo",
+            "touch one by one" to "tocar una por una",
+            "AURORA ECHO" to "ECO DE AURORA",
+        )
+        expected.forEach { (source, spanish) ->
+            AuroraLocalization.translate(source, "es") shouldBe spanish
+        }
+    }
+
+    @Test
+    fun newAuroraEnglishUiTextsStayUnchangedForEnglish() {
+        val texts = listOf(
+            "Aurora Keeper",
+            "CONSTELLATION",
+            "the thread is thin — slower",
+            "touch the stars, one by one",
+            "join the stars with one thread",
+            "Anew",
+            "Seal",
+            "weave with a thread",
+            "touch one by one",
+            "AURORA ECHO",
+        )
+        texts.forEach { source ->
+            AuroraLocalization.translate(source, "en") shouldBe source
+            AuroraLocalization.translate(source, "ru") shouldBe source
+        }
+        AuroraLocalization.translate("Хранитель Авроры", "ru") shouldBe "Хранитель Авроры"
+    }
 }
