@@ -92,6 +92,17 @@ object AuroraLocalization {
         "Some boundaries are thinner than others." to "Algunas fronteras son más delgadas que otras.",
         "Hidden by the aurora" to "Oculto por la aurora boreal",
         "Северное сияние помнит тех, кто не спит." to "La aurora boreal recuerda a quienes no duermen.",
+        "Aurora Keeper" to "Guardián de Aurora",
+        "Хранитель Авроры" to "Guardián de Aurora",
+        "CONSTELLATION" to "CONSTELACIÓN",
+        "the thread is thin — slower" to "el hilo es frágil: más despacio",
+        "touch the stars, one by one" to "toca las estrellas, una por una",
+        "join the stars with one thread" to "une las estrellas con un solo hilo",
+        "Anew" to "Empezar de nuevo",
+        "Seal" to "Sellar",
+        "weave with a thread" to "tejer con un hilo",
+        "touch one by one" to "tocar una por una",
+        "AURORA ECHO" to "ECO DE AURORA",
     )
 
     fun translate(text: String?): String? = translate(text, Locale.getDefault().language)

@@ -1027,7 +1027,7 @@
     <string name="myanimelist_relogin">Vuelve a iniciar sesión en MAL</string>
     <string name="source_unsupported">Fuente no soportada</string>
     <string name="error_no_match">No se han encontrado coincidencias</string>
-    <string name="track_error">%1$s error: %2$s</string>
+    <string name="track_error">Error de %1$s: %2$s</string>
     <string name="track_remove_date_conf_title">¿Quieres quitar esta fecha?</string>
     <string name="track_remove_start_date_conf_text">Al hacer esto %s ya no aparecerá como empezado ese día</string>
     <string name="track_remove_finish_date_conf_text">Al hacer esto %s ya no aparecerá como terminado ese día</string>
@@ -1928,4 +1928,27 @@
     <string name="reels_album_remove_album">Eliminar álbum de la colección</string>
     <string name="reels_album_open">Abrir álbum</string>
     <string name="reels_album_play_as_feed">Reproducir como lista de Reels</string>
+
+    <!-- Translation queue notifications -->
+    <string name="notification_translation_batch_cancel">Cancelar cola</string>
+    <string name="notification_translation_batch_paused_title">Cola de traducción en pausa</string>
+    <string name="notification_translation_batch_complete_title">Cola de traducción finalizada</string>
+    <string name="notification_translation_batch_summary">Traducidos: %1$d, omitidos: %2$d, errores: %3$d</string>
+    <string name="notification_translation_batch_paused_summary">%1$s La cola se detendrá cuando termine el capítulo actual.</string>
+    <string name="notification_translation_batch_complete_errors">Cola finalizada con errores. Traducidos: %1$d, omitidos: %2$d, errores: %3$d</string>
+    <string name="notification_translation_batch_complete_success">Cola finalizada. Traducidos: %1$d, omitidos: %2$d</string>
+
+    <!-- Donation option tags -->
+    <string name="donation_tag_russia">Rusia</string>
+    <string name="donation_tag_cis">CEI</string>
+    <string name="donation_tag_sbp">SBP</string>
+    <string name="donation_tag_card">Tarjeta</string>
+    <string name="donation_tag_crypto">Criptomonedas</string>
+
+    <!-- Auxiliary debug screens -->
+    <string name="debug_worker_info_title">Información de tareas en segundo plano</string>
+    <string name="debug_backup_schema_title">Esquema del archivo de copia de seguridad</string>
+    <string name="debug_workers_enqueued">En cola</string>
+    <string name="debug_workers_finished">Finalizadas</string>
+    <string name="debug_workers_running">En ejecución</string>
 </resources>
