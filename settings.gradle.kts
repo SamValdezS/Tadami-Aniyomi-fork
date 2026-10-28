@@ -77,3 +77,6 @@ if (privateGeminiModuleDir.isNotEmpty()) {
         project(":private-gemini-bridge").projectDir = privateModule
     }
 }
+
+include(":flexible-adapter-local")
+project(":flexible-adapter-local").projectDir = file("third-party/flexible-adapter")

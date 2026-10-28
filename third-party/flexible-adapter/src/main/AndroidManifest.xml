@@ -1,0 +1,2 @@
+<!-- Adapted for the local build: package is declared via namespace. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" />
