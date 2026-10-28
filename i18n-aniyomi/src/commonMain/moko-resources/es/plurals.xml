@@ -35,4 +35,12 @@
         <item quantity="many">Episodios %1$s y %2$d más</item>
         <item quantity="other">Episodios %1$s y %2$d más</item>
     </plurals>
+    <plurals name="novel_quotes_count_books">
+        <item quantity="one">%d libro</item>
+        <item quantity="other">%d libros</item>
+    </plurals>
+    <plurals name="novel_quotes_count_quotes">
+        <item quantity="one">%d cita</item>
+        <item quantity="other">%d citas</item>
+    </plurals>
 </resources>
