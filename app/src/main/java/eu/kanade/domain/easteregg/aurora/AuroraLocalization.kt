@@ -33,7 +33,14 @@ object AuroraLocalization {
      * Task 13 (Q5): выбор локали для полей vault-payload — EN-юзеру En-вариант,
      * при отсутствии En (приватный сценарий) фолбэк на RU. Чистый overload — для тестов.
      */
-    fun localized(ru: String?, en: String?): String? = localized(ru, en, isEnglish())
+    fun localized(ru: String?, en: String?): String? {
+        val selected = localized(ru, en, isEnglish())
+        return if (Locale.getDefault().language == "es") {
+            translate(selected, "es")
+        } else {
+            selected
+        }
+    }
 
     internal fun localized(ru: String?, en: String?, isEnglish: Boolean): String? =
         if (isEnglish) (en ?: ru) else ru
@@ -66,6 +73,27 @@ object AuroraLocalization {
         "Скрыто северным сиянием" to "Hidden by the aurora",
     )
 
+    private val SPANISH_UI_KEYS: Map<String, String> = mapOf(
+        "Heart of Aurora" to "Corazón de Aurora",
+        "Сердце Авроры" to "Corazón de Aurora",
+        "Echo I — Insomnia" to "Eco I — Insomnio",
+        "Echo II — Landmark" to "Eco II — Punto de referencia",
+        "Aurora Echo" to "Eco de Aurora",
+        "Call of Aurora" to "Llamado de Aurora",
+        "AURORA CODEX" to "CÓDICE DE AURORA",
+        "The Call" to "El llamado",
+        "Echo" to "Eco",
+        "The Letter" to "La carta",
+        "Relive the Manifestation" to "Revive la manifestación",
+        "Save to Heart" to "Guardar en el corazón",
+        "if words are powerless — hold the riddle" to "si las palabras no bastan, mantén presionado el acertijo",
+        "Replay the echo" to "Volver a reproducir el eco",
+        "Aurora noticed you at this hour..." to "Aurora se fijó en ti a esta hora...",
+        "Some boundaries are thinner than others." to "Algunas fronteras son más delgadas que otras.",
+        "Hidden by the aurora" to "Oculto por la aurora boreal",
+        "Северное сияние помнит тех, кто не спит." to "La aurora boreal recuerda a quienes no duermen.",
+    )
+
     fun translate(text: String?): String? = translate(text, Locale.getDefault().language)
 
     /**
@@ -75,6 +103,11 @@ object AuroraLocalization {
     internal fun translate(text: String?, languageCode: String): String? {
         if (text == null) return null
         if (languageCode == "ru") return text
+        if (languageCode == "es") {
+            val key = text.trim()
+            val english = UI_KEYS[key] ?: key
+            return SPANISH_UI_KEYS[english] ?: SPANISH_UI_KEYS[key] ?: text
+        }
         return UI_KEYS[text.trim()] ?: text
     }
 
@@ -87,6 +120,10 @@ object AuroraLocalization {
      */
     internal fun translateThemeUnlock(themeName: String?, languageCode: String): String? {
         if (themeName.isNullOrBlank()) return null
-        return if (languageCode == "ru") "Открыта тема: $themeName" else "Theme unlocked: $themeName"
+        return when (languageCode) {
+            "ru" -> "Открыта тема: $themeName"
+            "es" -> "Tema desbloqueado: $themeName"
+            else -> "Theme unlocked: $themeName"
+        }
     }
 }
